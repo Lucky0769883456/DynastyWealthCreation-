@@ -1,5 +1,37 @@
 <!DOCTYPE html>
 <html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  background-color:blue;
+  font-family: cursive;
+}
+
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
+</style>
+</head>
+<body>
+
+<h1 class="glow">DYNASTY WEALTH CREATION</h1>
+
 <title>DynastyWealthCreation</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,6 +49,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 </style>
 <body class="w3-black">
+
 
 
 
@@ -131,10 +164,12 @@ Our quality services as an education institute is to train, mentor & provide pro
    <h2 style="color:blue;">Full course Package</h2>
 </dv>
 
-<p><ul><li>Free signals, with market analysis,</li><li> setups and entry points.
-Theory concepts</li> & <li>practical hand on task is important!!!</li>
-<li>add to whatsapp group</li>
-<li>lifetime mentorship & consultation</li>
+<p><ul><li>1on1 in person lessons.</li><LI>Group lessons in person.<li>Free signals, with market analysis.</li><li> setups and entry points.
+Theory concepts</li>  <li>practical hand on task is important!!!</li>
+<li>whatsapp group</li>
+<li>telegram private channel</li>
+<li>mentorship & consultation</li>
+<li>Free PDF</LI>
 <h2> Inhalt markets Broker (My IB number 1379543) SA   </h2>
 
 <a href="https://inhaltmarkets.com/register-account/"  target="_blank" class="w3-hover-text-blue">Click Here to register!!!</a>
@@ -142,21 +177,7 @@ Theory concepts</li> & <li>practical hand on task is important!!!</li>
 </div>
 <a href="https://www.learntotradethemarket.com/forex-articles/"  target="_blank" class="w3-hover-text-blue">Read More!!!</a>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-     <!-- Portfolio Section -->
+ <!-- Portfolio Section -->
   <div class="w3-padding-64 w3-content" id="photos">
     <h2 class="w3-text-light-grey">Take Calculated Risks</h2>
     <hr style="width:200px" class="w3-opacity">
@@ -169,30 +190,14 @@ Theory concepts</li> & <li>practical hand on task is important!!!</li>
         </div>
     
      <h2>More valueable information</h2>
-<p><a href="https://linktr.ee/lucky_khumalo_4dwc/"  target="_blank" class="w3-hover-text-blue">Read More!!!</a></p> 
-
-    
-   
-    
+<p><a href="https://linktr.ee/lucky_khumalo_4dwc/"  target="_blank" class="w3-hover-text-blue">Read More!!!</a></p>
 
   <!-- Contact Section -->
   <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
     <h2 class="w3-text-light-grey">Contact Me</h2>
-    <hr style="width:200px" class="w3-opacity">
-    
- 
-    
-
-
-    
-    
-    
-    
-    
-    
-    
-
-    <div class="w3-section">
+    <hr style="width:200px" class="w3-opacity">    
+      <div class="w3-section">
+      
       <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Durban, South Africa</p>
       <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +27 769883456</p>
       <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: 0769883456lucky@gmail.com</p>
@@ -235,8 +240,3 @@ Theory concepts</li> & <li>practical hand on task is important!!!</li>
 </body>
 </html>
     
-    
-    
-    
-    
-   
