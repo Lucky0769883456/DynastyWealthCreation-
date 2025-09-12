@@ -1,644 +1,823 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>DynastyWealthCreation</title>
-<!-- You can use Open Graph tags to customize link previews.
-Learn more: https://developers.facebook.com/docs/sharing/webmasters -->
-<meta property="og:url"           content="https://lucky0769883456.github.io/DynastyWealthCreation-/
- " />
-<meta property="og:type"          content=" DynastyWealthCreation   " />
-<meta property="og:title"         content="DynastyWealthCreation  " />
-<meta property="og:description"   content=""Learn how to invest from trading the Financial Markets".
-"Welcome to the 1% Elite Club...!"   " />
-<meta property="og:image"         content="https://pbs.twimg.com/profile_images/1403390571633389573/-RhyfNvP_400x400.jpg  " />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynasty Wealth Creation</title>
+    <!-- Open Graph Tags -->
+    <meta property="og:url" content="https://lucky0769883456.github.io/DynastyWealthCreation-/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dynasty Wealth Creation">
+    <meta property="og:description" content="Learn how to invest and trade in the Financial Markets. Join the 1% Elite Club!">
+    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1403390571633389573/-RhyfNvP_400x400.jpg">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VP2SENCY3F"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-VP2SENCY3F');
+    </script>
+    <!-- Smartsupp Live Chat -->
+    <script type="text/javascript">
+      var _smartsupp = _smartsupp || {};
+      _smartsupp.key = '4eceaa2f1cc6201be95dfb2a541f856f91474e4c';
+      window.smartsupp||(function(d) {
+        var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
+        s=d.getElementsByTagName('script')[0];c=d.createElement('script');
+        c.type='text/javascript';c.charset='utf-8';c.async=true;
+        c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
+      })(document);
+    </script>
+    <style>
+      :root {
+        --primary: #f59e0b;
+        --primary-dark: #d97706;
+        --dark: #111827;
+        --darker: #0a0e1a;
+      }
+      
+      body { 
+        font-family: 'Montserrat', sans-serif;
+        scroll-behavior: smooth;
+        background: linear-gradient(to bottom, var(--darker), var(--dark));
+        min-height: 100vh;
+      }
+      
+      .gradient-bg {
+        background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+      }
+      
+      .hero-bg {
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                    url('https://images.unsplash.com/photo-1590283603385-17ffb3a7f29f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+        background-size: cover;
+        background-position: center;
+      }
+      
+      .card-hover {
+        transition: all 0.3s ease;
+      }
+      
+      .card-hover:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+      }
+      
+      .service-card {
+        background: linear-gradient(145deg, #1e293b, #334155);
+        border-left: 4px solid var(--primary);
+      }
+      
+      .btn-primary {
+        background: linear-gradient(to right, var(--primary), var(--primary-dark));
+        transition: all 0.3s;
+      }
+      
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 15px -3px rgba(245, 158, 11, 0.3);
+      }
+      
+      .animate-float {
+        animation: float 3s ease-in-out infinite;
+      }
+      
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(to right, #f59e0b, #fbbf24);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      
+      input, textarea {
+        transition: all 0.3s;
+      }
+      
+      input:focus, textarea:focus {
+        box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.3);
+      }
+      
+      .mobile-menu {
+        transition: all 0.3s ease;
+      }
+      
+      .testimonial-card {
+        background: linear-gradient(145deg, #1a202c, #2d3748);
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+      }
+      
+      .testimonial-card.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      
+      .faq-item {
+        border-bottom: 1px solid #374151;
+      }
+      
+      .faq-answer {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+      
+      .faq-item.active .faq-answer {
+        max-height: 500px;
+      }
+      
+      .faq-item.active .faq-toggle {
+        transform: rotate(180deg);
+      }
+    </style>
 </head>
-<body>
-<!-- Load Facebook SDK for JavaScript -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-var js, fjs = d.getElementsByTagName(s)[0];
-if (d.getElementById(id)) return;
-js = d.createElement(s); js.id = id;
-js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0";
-fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+<body class="text-gray-200">
+    <!-- Header -->
+    <header class="bg-gray-900 shadow-lg sticky top-0 z-50 border-b border-gray-800">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-yellow-400 flex items-center">
+                <i class="fas fa-chart-line mr-2"></i> Dynasty Wealth Creation
+            </div>
+            <ul class="hidden md:flex space-x-8">
+                <li><a href="#home" class="hover:text-yellow-400 transition-colors font-medium">Home</a></li>
+                <li><a href="#about" class="hover:text-yellow-400 transition-colors font-medium">About</a></li>
+                <li><a href="#services" class="hover:text-yellow-400 transition-colors font-medium">Services</a></li>
+                <li><a href="#testimonials" class="hover:text-yellow-400 transition-colors font-medium">Testimonials</a></li>
+                <li><a href="#faq" class="hover:text-yellow-400 transition-colors font-medium">FAQ</a></li>
+                <li><a href="#contact" class="hover:text-yellow-400 transition-colors font-medium">Contact</a></li>
+            </ul>
+            <!-- Mobile Menu -->
+            <div class="md:hidden">
+                <button id="menu-toggle" class="text-white focus:outline-none">
+                    <i class="fa fa-bars fa-2x"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-gray-900 border-t border-gray-800">
+            <ul class="flex flex-col items-center space-y-4 py-4">
+                <li><a href="#home" class="hover:text-yellow-400 transition-colors font-medium">Home</a></li>
+                <li><a href="#about" class="hover:text-yellow-400 transition-colors font-medium">About</a></li>
+                <li><a href="#services" class="hover:text-yellow-400 transition-colors font-medium">Services</a></li>
+                <li><a href="#testimonials" class="hover:text-yellow-400 transition-colors font-medium">Testimonials</a></li>
+                <li><a href="#faq" class="hover:text-yellow-400 transition-colors font-medium">FAQ</a></li>
+                <li><a href="#contact" class="hover:text-yellow-400 transition-colors font-medium">Contact</a></li>
+            </ul>
+        </div>
+    </header>
 
-<!-- Your share button code -->
-<div class="fb-share-button" 
-data-href="https://lucky0769883456.github.io/DynastyWealthCreation-/   " 
-data-layout="button_count">
-</div>
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg text-white py-20 md:py-32">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Welcome to <span class="text-yellow-400">Dynasty Wealth Creation</span></h1>
+            <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">Learn how to invest and trade in the Financial Markets. Join the 1% Elite Club and transform your financial future!</p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services" class="btn-primary px-8 py-4 rounded-lg font-semibold text-lg shadow-lg">Explore Our Services</a>
+                <a href="#contact" class="bg-transparent border-2 border-yellow-400 text-yellow-400 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-yellow-400 hover:text-gray-900 transition-colors">Get Started Today</a>
+            </div>
+            <!-- TradingView Widget -->
+            <div class="mt-16 max-w-6xl mx-auto">
+                <div class="tradingview-widget-container rounded-lg overflow-hidden shadow-lg">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                    {
+                        "symbols": [
+                            {"proName": "FOREXCOM:SPXUSD", "title": "S&P 500"},
+                            {"proName": "FOREXCOM:NSXUSD", "title": "Nasdaq 100"},
+                            {"proName": "FX_IDC:EURUSD", "title": "EUR/USD"},
+                            {"proName": "BITSTAMP:BTCUSD", "title": "BTC/USD"},
+                            {"proName": "BITSTAMP:ETHUSD", "title": "ETH/USD"}
+                        ],
+                        "colorTheme": "dark",
+                        "isTransparent": false,
+                        "displayMode": "adaptive",
+                        "locale": "en"
+                    }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="gradient-bg py-16">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div class="p-4">
+                    <div class="stat-number" data-target="500">0</div>
+                    <p class="text-gray-400 mt-2">Students Trained</p>
+                </div>
+                <div class="p-4">
+                    <div class="stat-number" data-target="98">0</div>
+                    <p class="text-gray-400 mt-2">Success Rate</p>
+                </div>
+                <div class="p-4">
+                    <div class="stat-number" data-target="5">0</div>
+                    <p class="text-gray-400 mt-2">Years Experience</p>
+                </div>
+                <div class="p-4">
+                    <div class="stat-number" data-target="24">0</div>
+                    <p class="text-gray-400 mt-2">Support Hours</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-yellow-400">About Us</h2>
+            <p class="text-center text-xl text-gray-400 max-w-3xl mx-auto mb-12">Empowering the next generation of financial market traders</p>
+            
+            <div class="flex flex-col md:flex-row items-center gap-10">
+                <div class="md:w-1/2">
+                    <img src="https://d3hjf51r9j54j7.cloudfront.net/wp-content/uploads/sites/3/2019/08/financial-education.jpg" 
+                         alt="Financial Education" 
+                         class="rounded-xl shadow-2xl w-full h-auto animate-float"
+                         loading="lazy">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-lg mb-6">Dynasty Wealth Creation (Enterprise Number 2018/429678/07) is a premier financial markets educational institution dedicated to training aspiring traders. Founded by Lucky Khumalo, a high school teacher and passionate trader, our mission is to empower students with the skills, knowledge, and resilience needed to succeed in the ever-changing financial markets.</p>
+                    <p class="text-lg mb-6">Our vision is to build a community of independent, professional traders who adapt and thrive in any market condition. We believe in practical, hands-on education that translates directly to real-world trading success.</p>
+                    <div class="bg-gray-800 p-6 rounded-xl border-l-4 border-yellow-400">
+                        <p class="text-xl font-semibold text-yellow-400">"Welcome to the 1% Elite Club!"</p>
+                        <p class="mt-2 text-gray-400">- Lucky Khumalo, Founder</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Founder Quote -->
+            <div class="mt-16 text-center max-w-4xl mx-auto">
+                <h3 class="text-2xl font-semibold mb-6">Words from Our Founder</h3>
+                <blockquote class="text-xl italic bg-gray-800 p-8 rounded-xl border-l-4 border-yellow-400">
+                    "If we teach today's students as we taught yesterday's, we rob them of tomorrow. At Dynasty Wealth Creation, we're committed to innovative, forward-thinking financial education that prepares you for the markets of tomorrow, today."
+                    <span class="block mt-4 text-lg not-italic text-yellow-400">– John Dewey (Philosophy we live by)</span>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="gradient-bg py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-yellow-400">Our Services</h2>
+            <p class="text-center text-xl text-gray-400 max-w-3xl mx-auto mb-12">Comprehensive trading education and support for all levels</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Full Private Course Card -->
+                <div class="service-card p-8 rounded-xl shadow-lg card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-yellow-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-graduation-cap text-yellow-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Full Private Course</h3>
+                        <p class="text-gray-400">Complete trading education package</p>
+                    </div>
+                    <div class="text-center mb-6">
+                        <span class="text-3xl font-bold text-yellow-400">R6000</span>
+                        <span class="text-gray-400 block">Once-Off</span>
+                    </div>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+                            <span>1-on-1 and group lessons</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+                            <span>Free signals with market analysis</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+                            <span>WhatsApp and Telegram support</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+                            <span>Free Financial Education Short Course</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check-circle text-yellow-400 mt-1 mr-3"></i>
+                            <span>Lifetime access to updated materials</span>
+                        </li>
+                    </ul>
+                    <a href="#contact" class="btn-primary block text-center py-3 rounded-lg font-semibold">Enroll Now</a>
+                </div>
+                
+                <!-- Signal Subscription Card -->
+                <div class="service-card p-8 rounded-xl shadow-lg card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-yellow-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-chart-line text-yellow-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Signal Subscription</h3>
+                        <p class="text-gray-400">Professional trading signals</p>
+                    </div>
+                    <div class="mb-8">
+                        <div class="flex justify-between items-center py-3 border-b border-gray-700">
+                            <span>1 Month</span>
+                            <span class="font-bold text-yellow-400">R2500</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-700">
+                            <span>3 Months</span>
+                            <span class="font-bold text-yellow-400">R3000</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3 border-b border-gray-700">
+                            <span>6 Months</span>
+                            <span class="font-bold text-yellow-400">R6000</span>
+                        </div>
+                        <div class="flex justify-between items-center py-3">
+                            <span>1 Year</span>
+                            <span class="font-bold text-yellow-400">R12,000</span>
+                        </div>
+                    </ul>
+                    </div>
+                    <a href="#contact" class="btn-primary block text-center py-3 rounded-lg font-semibold">Subscribe Now</a>
+                </div>
+                
+                <!-- Funded Trading Card -->
+                <div class="service-card p-8 rounded-xl shadow-lg card-hover">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-yellow-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-hand-holding-usd text-yellow-400 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2">Funded Trading</h3>
+                        <p class="text-gray-400">Get funded with our trusted partners</p>
+                    </div>
+                    <p class="mb-6">Access capital from industry-leading prop firms to grow your trading career with reduced personal risk.</p>
+                    <div class="flex flex-col gap-4 mb-8">
+                        <a href="https://fundednext.com/?fpr=lucky50" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center">
+                            <span>Join FundedNext</span>
+                            <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                        <a href="https://the5ers.com/?ref=8460" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white px-4 py-3 rounded-lg font-semibold transition-colors flex items-center justify-center">
+                            <span>Join The5ers</span>
+                            <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                    <a href="#contact" class="bg-transparent border-2 border-yellow-400 text-yellow-400 text-center py-3 rounded-lg font-semibold block hover:bg-yellow-400 hover:text-gray-900 transition-colors">Learn More</a>
+                </div>
+            </div>
+            
+            <!-- Affiliate Links -->
+            <div class="mt-16 text-center">
+                <h3 class="text-2xl font-semibold mb-6 text-yellow-400">Trading Platforms</h3>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a href="https://ct.deriv.com/investor/eyXMtwBs?u=LuckyKhumalo" target="_blank" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-lg font-medium transition-colors flex items-center">
+                        <i class="fas fa-copy mr-2 text-yellow-400"></i>
+                        Copy My Trades (Deriv)
+                    </a>
+                    <a href="https://ctrader.com/u/LuckyKhumalo" target="_blank" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-lg font-medium transition-colors flex items-center">
+                        <i class="fas fa-copy mr-2 text-yellow-400"></i>
+                        Copy My Trades (cTrader)
+                    </a>
+                    <a href="https://accounts.binance.com/en/register?ref=IHBCG87Q" target="_blank" class="bg-gray-800 hover:bg-gray-700 px-6 py-3 rounded-lg font-medium transition-colors flex items-center">
+                        <i class="fas fa-exchange-alt mr-2 text-yellow-400"></i>
+                        Open Binance Account
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-yellow-400">Success Stories</h2>
+            <p class="text-center text-xl text-gray-400 max-w-3xl mx-auto mb-12">Hear what our students have to say</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-gray-900 font-bold mr-4">TS</div>
+                        <div>
+                            <h4 class="font-semibold">Thabo Sithole</h4>
+                            <p class="text-yellow-400 text-sm">Forex Trader</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-400">"The mentorship I received completely transformed my approach to trading. I've consistently been profitable for 6 months now!"</p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-gray-900 font-bold mr-4">NM</div>
+                        <div>
+                            <h4 class="font-semibold">Nomsa Mbele</h4>
+                            <p class="text-yellow-400 text-sm">Stock Investor</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-400">"The course materials are incredibly comprehensive. I went from knowing nothing about markets to building a diversified portfolio."</p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center text-gray-900 font-bold mr-4">SM</div>
+                        <div>
+                            <h4 class="font-semibold">Sipho Mkhize</h4>
+                            <p class="text-yellow-400 text-sm">Crypto Trader</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-3">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-400">"The signals service has been incredibly accurate. I've more than doubled my investment in just 3 months using their analysis."</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="btn-primary inline-block px-8 py-3 rounded-lg font-semibold">Start Your Success Story</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="gradient-bg py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-yellow-400">Frequently Asked Questions</h2>
+            <p class="text-center text-xl text-gray-400 max-w-3xl mx-auto mb-12">Get answers to common questions about our services</p>
+            
+            <div class="max-w-3xl mx-auto">
+                <!-- FAQ Item 1 -->
+                <div class="faq-item mb-4 bg-gray-800 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center font-semibold text-lg">
+                        <span>Do I need prior experience to start the course?</span>
+                        <i class="faq-toggle fas fa-chevron-down text-yellow-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0 text-gray-400">
+                            No prior experience is necessary! Our courses are designed to take you from beginner to advanced trader. We start with the fundamentals and gradually progress to more advanced concepts and strategies.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="faq-item mb-4 bg-gray-800 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center font-semibold text-lg">
+                        <span>How long does it take to complete the full course?</span>
+                        <i class="faq-toggle fas fa-chevron-down text-yellow-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0 text-gray-400">
+                            The full course typically takes 4-6 weeks to complete, depending on your pace. However, you have lifetime access to all materials and can revisit any section whenever you need a refresher.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="faq-item mb-4 bg-gray-800 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center font-semibold text-lg">
+                        <span>What markets do you cover in your training?</span>
+                        <i class="faq-toggle fas fa-chevron-down text-yellow-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0 text-gray-400">
+                            We cover Forex, Stocks, Cryptocurrencies, and Commodities. Our training provides a comprehensive understanding of how these markets work and strategies specific to each market.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="faq-item mb-4 bg-gray-800 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center font-semibold text-lg">
+                        <span>How accurate are your trading signals?</span>
+                        <i class="faq-toggle fas fa-chevron-down text-yellow-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0 text-gray-400">
+                            Our signals have an average accuracy rate of 75-85%. However, we always emphasize proper risk management as no signal service can guarantee 100% accuracy. Past performance is not indicative of future results.
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="faq-item mb-4 bg-gray-800 rounded-xl overflow-hidden">
+                    <button class="faq-question w-full text-left p-6 flex justify-between items-center font-semibold text-lg">
+                        <span>What kind of support do you offer after the course?</span>
+                        <i class="faq-toggle fas fa-chevron-down text-yellow-400 transition-transform"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="p-6 pt-0 text-gray-400">
+                            We offer ongoing support through WhatsApp and Telegram groups where you can ask questions, share ideas, and get updates. You also get access to all future course material updates at no additional cost.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-lg text-gray-400 mb-6">Still have questions? We're here to help!</p>
+                <a href="#contact" class="btn-primary inline-block px-8 py-3 rounded-lg font-semibold">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gray-800">
+        <div class="container mx-auto px-6 text-center">
+            <h3 class="text-2xl font-bold mb-4 text-yellow-400">Join Our Trading Community</h3>
+            <p class="text-gray-400 max-w-2xl mx-auto mb-6">Subscribe to our newsletter for market insights, trading tips, and exclusive offers.</p>
+            <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-yellow-400 focus:outline-none">
+                <button type="submit" class="btn-primary px-6 py-3 rounded-lg font-semibold whitespace-nowrap">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-yellow-400">Contact Us</h2>
+            <p class="text-center text-xl text-gray-400 max-w-3xl mx-auto mb-12">Reach out to start your trading journey today</p>
+            
+            <div class="flex flex-col md:flex-row gap-12">
+                <!-- Contact Info -->
+                <div class="md:w-2/5">
+                    <div class="bg-gray-800 p-8 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold mb-6 text-yellow-400">Get In Touch</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-yellow-400/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-map-marker-alt text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Location</h4>
+                                    <p class="text-gray-400">PMB & Durban, South Africa</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-yellow-400/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-phone text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Phone</h4>
+                                    <p class="text-gray-400">+27 769883456</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-yellow-400/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-envelope text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">Email</h4>
+                                    <p class="text-gray-400">0769883456lucky@gmail.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-10 h-10 bg-yellow-400/20 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fab fa-whatsapp text-yellow-400"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium">WhatsApp</h4>
+                                    <p class="text-gray-400">+27 769883456</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Social Media -->
+                        <div class="mt-8 pt-6 border-t border-gray-700">
+                            <h4 class="font-medium mb-4 text-yellow-400">Follow Us</h4>
+                            <div class="flex space-x-4">
+                                <a href="https://web.facebook.com/LuckyKhumalo4DWC" target="_blank" class="w-10 h-10 bg-gray-700 hover:bg-yellow-400 rounded-full flex items-center justify-center transition-colors group">
+                                    <i class="fab fa-facebook-f text-gray-300 group-hover:text-gray-900"></i>
+                                </a>
+                                <a href="https://www.instagram.com/lucky_khumalo_4dwc" target="_blank" class="w-10 h-10 bg-gray-700 hover:bg-yellow-400 rounded-full flex items-center justify-center transition-colors group">
+                                    <i class="fab fa-instagram text-gray-300 group-hover:text-gray-900"></i>
+                                </a>
+                                <a href="https://twitter.com/Lucky0769883456" target="_blank" class="w-10 h-10 bg-gray-700 hover:bg-yellow-400 rounded-full flex items-center justify-center transition-colors group">
+                                    <i class="fab fa-twitter text-gray-300 group-hover:text-gray-900"></i>
+                                </a>
+                                <a href="https://www.youtube.com/channel/UCexSRkcuKoB4tCp7CeB8NbA" target="_blank" class="w-10 h-10 bg-gray-700 hover:bg-yellow-400 rounded-full flex items-center justify-center transition-colors group">
+                                    <i class="fab fa-youtube text-gray-300 group-hover:text-gray-900"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="md:w-3/5">
+                    <form action="https://formspree.io/f/0769883456lucky@gmail.com" method="POST" class="bg-gray-800 p-8 rounded-xl shadow-lg">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" required 
+                                       class="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-white focus:border-yellow-400 focus:outline-none">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-white focus:border-yellow-400 focus:outline-none">
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <label for="service" class="block text-sm font-medium mb-2">Service Interested In</label>
+                            <select id="service" name="service" 
+                                    class="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-white focus:border-yellow-400 focus:outline-none">
+                                <option value="">Select a service</option>
+                                <option value="full-course">Full Private Course</option>
+                                <option value="signals">Signal Subscription</option>
+                                <option value="funded">Funded Trading</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mt-6">
+                            <label for="message" class="block text-sm font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="5" required 
+                                      class="w-full p-3 border border-gray-600 rounded-lg bg-gray-700 text-white focus:border-yellow-400 focus:outline-none"></textarea>
+                        </div>
+                        
+                        <div class="mt-8">
+                            <button type="submit" class="w-full btn-primary py-4 rounded-lg font-semibold text-lg">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12 border-t border-gray-700">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold text-yellow-400 mb-4">Dynasty Wealth Creation</h3>
+                    <p class="text-gray-400">Empowering the next generation of traders through comprehensive financial education and mentorship.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-yellow-400 transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-yellow-400 transition-colors">About</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-yellow-400 transition-colors">Services</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-yellow-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-yellow-400 transition-colors">Full Private Course</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-yellow-400 transition-colors">Signal Subscription</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-yellow-400 transition-colors">Funded Trading</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-yellow-400 transition-colors">Risk Disclosure</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2025 Dynasty Wealth Creation. All rights reserved. Enterprise Number: 2018/429678/07</p>
+                <p class="mt-2 text-gray-400">Powered by <a href="https://www.evernote.com/referral/Registration.action?sig=628a556a6fd8648e27765e0daa0f49944dbde354988d7ead6957eca9c4f0da76&uid=205882803" target="_blank" class="text-yellow-400 hover:underline">Lucky Khumalo</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-yellow-400 text-gray-900 rounded-full shadow-lg flex items-center justify-center opacity-0 transition-opacity">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('menu-toggle').addEventListener('click', () => {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+
+        // Back to Top Button
+        const backToTopButton = document.getElementById('back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.remove('opacity-0');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        // Animate stats counter
+        const counters = document.querySelectorAll('.stat-number');
+        const speed = 200;
+
+        function animateCounters() {
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = Math.ceil(target / speed);
+                
+                if (count < target) {
+                    counter.innerText = Math.min(count + increment, target);
+                    setTimeout(animateCounters, 1);
+                }
+            });
+        }
+
+        // Testimonial animation on scroll
+        const testimonialCards = document.querySelectorAll('.testimonial-card');
+        
+        function checkTestimonials() {
+            testimonialCards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (cardTop < windowHeight * 0.85) {
+                    card.classList.add('visible');
+                }
+            });
+        }
+
+        // Initialize animations when page loads
+        window.addEventListener('load', () => {
+            animateCounters();
+            checkTestimonials();
+        });
+
+        window.addEventListener('scroll', checkTestimonials);
+
+        // Form validation
+        const contactForm = document.querySelector('form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                // Simple validation - you can expand this
+                const email = document.getElementById('email');
+                if (!email.value.includes('@')) {
+                    e.preventDefault();
+                    email.focus();
+                    alert('Please enter a valid email address');
+                }
+            });
+        }
+    </script>
 </body>
-   
-    
-        
-             
-       <a href="https://chat.whatsapp.com/Ke750os1coGCKAeUqGFRDi " text=Hi%20Eric,%20I%20am%20sending%20you%20this%20message%20because%20I%20am%20interested%20in%20your%20business!" style="text-decoration: none;" target="_blank">
-	 <img src= https://d3hjf51r9j54j7.cloudfront.net/wp-content/uploads/sites/3/2019/08/financial-education.jpg
-             
-                   " width="50" height="50"/>
-</a>
-
-<a href="https://pbs.twimg.com/profile_images/1550870457796141059/Bv2bxlf-_400x400.jpg " text=Hi%20Eric,%20I%20am%20sending%20you%20this%20message%20because%20I%20am%20interested%20in%20your%20business!" target="_blank">
-  Send Message  
-</a>
-             
-<html>
-<head>
-<!-- Smartsupp Live Chat script -->
-<script type="text/javascript">
-var _smartsupp = _smartsupp || {};
-_smartsupp.key = '4eceaa2f1cc6201be95dfb2a541f856f91474e4c';
-window.smartsupp||(function(d) {
-  var s,c,o=smartsupp=function(){ o._.push(arguments)};o._=[];
-  s=d.getElementsByTagName('script')[0];c=d.createElement('script');
-  c.type='text/javascript';c.charset='utf-8';c.async=true;
-  c.src='https://www.smartsuppchat.com/loader.js?';s.parentNode.insertBefore(c,s);
-})(document);
-</script>
-
- <html>
- <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VP2SENCY3F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VP2SENCY3F');
-</script>
-
-<title>DynastyWealthCreation</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
- <style>
-body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-.w3-row-padding img {margin-bottom: 13px}
-/* Set the width of the sidebar to 120px */
-.w3-sidebar {width: 120px;background: #222;}
-/* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-#main {margin-left: 120px}
-/* Remove margins from "page content" on small screens */
-@media only screen and (max-width: 600px) {#main {margin-left: 0}}
-</style>
-<body class="w3-black">
-
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-      <div> <img src=" https://www.makingchips.com/hs-fs/hubfs/iStock-925494108-1.jpg?width=462&name=iStock-925494108-1.jpg   w=540  "      alt="DynastyWealthCreation" width="150" height="100">
-        </div>
-         <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
-      </a>
-  <a href="#photos" class="w3-bar-item w3-button w3-padding-large w3-hover-blue">
-    <i class="fa fa-eye w3-xxlarge"></i>
-    <p>PHOTOS</p>
-  </a>
-    
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>CONTACT</p>
-  </a>
-</nav>
-
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
-  </div>
-</div>
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-
-
-  <header class="w3-container w3-padding-32 w3-center w3-blue" id="home">
-  <div class="covid-note"><h7 style="color:black;">
-		Trading Truth---"Bulls Make Money, Bears Make Money, Pigs Get Slaughtered"     
-               <p><a href="https://ct.deriv.com/investor/eyXMtwBs?u=LuckyKhumalo%F0%9F%8E%89%F0%9F%AA%84%F0%9F%8E%8A%F0%9F%9A%80%F0%9F%93%88%F0%9F%93%8A%F0%9F%93%89%F0%9F%8C%8C&fbclid=IwAR0OQQHxOUVrkwbYjyKNJ8tSN6_sAMapV6hwfJDvzvWZRgPZf--DotY823c/"  target="_blank" class="w3-hover-text-red"><h6>"Copy my trades" </h3></a></p>
-             <p><a href="https://ctrader.com/u/LuckyKhumalo?lang=en&fbclid=IwAR13Bk_4_jZ6ci4-s7cUE-lEMpmStXfO3t0hGbXaNgAb3L80_fVpL2OC4g4#%F0%9F%91%BB/"  target="_blank" class="w3-hover-text-red"><h6>"Ctrader copy me " </h3></a></p>
-        <p><a href="https://0769883456lucky.wixsite.com/website/blog/"  target="_blank" class="w3-hover-text-red"><h6>"My Blogging site " </h3></a></p>
-        
-	</div> <p class="footerSocial"><span><a href="https://web.facebook.com/LuckyKhumalo4DWC/?modal=admin_todo_tour    " target="_blank" class="social facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;
-  <a href="https://www.instagram.com/lucky_khumalo_4dwc/?hl=en%20/   " target="_blank" class="social instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></span></p>
-  <a href="https://twitter.com/Lucky0769883456" target="_blank"class="social facebook"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
-   <a href="https://www.youtube.com/channel/UCexSRkcuKoB4tCp7CeB8NbA?view_as=subscriber"target="_blank" class="youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a>&nbsp; 
-   
- 
-    
-    
-    
-    <p><a href="https://linktr.ee/lucky_khumalo_4dwc/"  target="_blank" class="w3-hover-text-black"><h6>"lucky_khumalo_4dwc "  </h3></a></p>
- 
-        
-
-   
- 	<div class="covid-note"><a href="https://fundednext.com/?fpr=lucky50   /" target="_blank"><h1 style="color:yellow;">"Fundednext"   </h1> </a>
-	</div>
-    
-      
-    
-       
-<body class="pageID15">
-
-<!-- TradingView Widget BEGIN -->
-<div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span class="blue-text">Ticker Tape</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-  {
-  "symbols": [
-    {
-      "proName": "FOREXCOM:SPXUSD",
-      "title": "S&P 500"
-    },
-    {
-      "proName": "FOREXCOM:NSXUSD",
-      "title": "Nasdaq 100"
-    },
-    {
-      "proName": "FX_IDC:EURUSD",
-      "title": "EUR/USD"
-    },
-    {
-      "proName": "BITSTAMP:BTCUSD",
-      "title": "BTC/USD"
-    },
-    {
-      "proName": "BITSTAMP:ETHUSD",
-      "title": "ETH/USD"
-    }
-  ],
-  "colorTheme": "dark",
-  "isTransparent": false,
-  "displayMode": "adaptive",
-  "locale": "en"
-}
-  </script>
-</div>
-
- <!-- TradingView Widget END -->
-
-  <h1 class="w3-jumbo"><span class="w3-hide-small">Dynasty</span> Wealth Creation</h1>
-       
-   <h2>"Learn how to invest from trading the Financial Markets".</h2>
-   				<h1 style="color:blue;">"Welcome to the 1% Elite Club...!"</h1>
-   <div> <img src="  https://d3hjf51r9j54j7.cloudfront.net/wp-content/uploads/sites/3/2019/08/financial-education.jpg "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-                         
-         
-          		 
-  <div> <img src="https://d1m75rqqgidzqn.cloudfront.net/wp-data/2020/12/07011650/shutterstock_1496224217.jpg  "      w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-                
-                
- 
-  	
-       
-      <div> <img src="https://pbs.twimg.com/media/EvQI7q-XEAgp68E?format=jpg&name=medium  
-              "  w=540 "      alt="DynastyWealthCreation" width="600" height="300">
-          </div>
-         
-          
-          
-      
-              
- <h4>"It is not what one knows but what one does with what one knows that is significant." (Anon)   .</h4>
-
-        <h2>The Spiritual Side of Trading: Is Trading a Sin?  </h2>
-<p><a href="https://tradingeducators.com/is-trading-a-sin?fbclid=IwAR2HnB-mpgQlgMESsHhlaKP2QzmyMEv0s2WPe9kU4pQOJpTwRrauqu_gfBw   /"  target="_blue" class="w3-hover-text-blue"><h3> Click God </h3></a></p>
-
- <img src="https://pbs.twimg.com/media/EvPlqAQXYAY4-We?format=jpg&name=small  " width=60% height=20%>
- 
-  	<div class="covid-note">
-		bespokefundingprogram <a href="https://fundednext.com/?fpr=lucky50   /" target="_blank"><h1 style="color:yellow;">"Fundednext"   </h1> </a>
-	</div>
-  
-   	
-  
-  
-  
-       </header>
-     
-   <iframe width="640" height="315" src="https://www.youtube.com/embed/17PqxgCJyww" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-  
-       
-         
-        <h2>Click below for insights!!!</h2>
-        
-            <p><a href="https://www.youtube.com/watch?v=iRFy89w3okw /"  target="_blue" class="w3-hover-text-blue"><h3> "A Beautiful youtube Video click Lucky Khumalo"   </h3></a></p>
-        
-        
-        
-        <p><a href=" https://www.youtube.com/watch?v=vmdRo3FNaIM&feature=share&fbclid=IwAR331GoK9b3A47ofwhyl_r8laFDN0CrpEu01B__Yvf8k6JbfrA3L_Mm9D-k    /"  target="_blue" class="w3-hover-text-blue"><h3> "The Truth About Forex Trading! Is It A Scam?"   </h3></a></p>
-        
-                
- <p><a href=" https://www.youtube.com/watch?v=IYewYpWi2PQ /"  target="_blue" class="w3-hover-text-blue"><h3> "IS FOREX TRADING A SCAM ?" </h3></a></p>
-
-         <h2>AFFILIATE LINK - Open up a trading account</h2>
-
-  
-   <h2> Another licenced broker (FSA Regulated) Deriv broker    </h2>
-    <h2> Get Funded with Fundednext prop firm  </h2>
-    <p><a href="https://ct.deriv.com/investor/eyXMtwBs?u=LuckyKhumalo%F0%9F%8E%89%F0%9F%AA%84%F0%9F%8E%8A%F0%9F%9A%80%F0%9F%93%88%F0%9F%93%8A%F0%9F%93%89%F0%9F%8C%8C&fbclid=IwAR0OQQHxOUVrkwbYjyKNJ8tSN6_sAMapV6hwfJDvzvWZRgPZf--DotY823c/"  target="_blank" class="w3-hover-text-red"><h6>"Copy my trades" </h3></a></p>
-             <p><a href="https://ctrader.com/u/LuckyKhumalo?lang=en&fbclid=IwAR13Bk_4_jZ6ci4-s7cUE-lEMpmStXfO3t0hGbXaNgAb3L80_fVpL2OC4g4#%F0%9F%91%BB/"  target="_blank" class="w3-hover-text-red"><h6>"Ctrader copy me " </h3></a></p>
-        <p><a href="https://0769883456lucky.wixsite.com/website/blog/"  target="_blank" class="w3-hover-text-red"><h6>"My Blogging site " </h3></a></p>
-   
-             <a href="https://fundednext.com/?fpr=lucky50" target="_blank" style="outline:none;border:none;"><img src="https://d2gdx5nv84sdx2.cloudfront.net/uploads/yvw9pg4y/marketing_asset/banner/13560/F1y5yNAWcAI8OrQ.jpeg"width="120" height="600" alt="fundednext" border="0"/></a>
-   
-   
-   
-<script type="text/javascript" src="https://js.partnershipsprogram.com/javascript.php?prefix=TvIor_goGPKhWoqmOk2VLGNd7ZgqdRLk&amp;media=3220&amp;campaign=1"></script>
-
-<script type="text/javascript" src="https://js.partnershipsprogram.com/javascript.php?prefix=TvIor_goGPI5TVC3w-F7AGNd7ZgqdRLk&amp;media=3218&amp;campaign=1"></script>
-<script type="text/javascript" src="https://js.partnershipsprogram.com/javascript.php?prefix=TvIor_goGPK2vdm9PpHVCmNd7ZgqdRLk&amp;media=662&amp;campaign=1"></script>
-            
-  
-	<div class="covid-note">
-		INSTANT FUNDING FOR FOREX TRADERS <a href="https://fundednext.com/?fpr=lucky50  /" target="_blank"><h1 style="color:green;">"Fundednext"  </h1> </a>
-	</div>        
-                
-   <script type="text/javascript" src="https://js.partnershipsprogram.com/javascript.php?prefix=TvIor_goGPK2vdm9PpHVCmNd7ZgqdRLk&amp;media=2963&amp;campaign=1"></script> 
-   
-   <script type="text/javascript" src="https://js.partnershipsprogram.com/javascript.php?prefix=TvIor_goGPI9F-13urvbiWNd7ZgqdRLk&amp;media=2839&amp;campaign=1"></script>
-   
-   <script type="text/javascript" src="https://js.partnershipsprogram.com/javascript.php?prefix=TvIor_goGPI9F-13urvbiWNd7ZgqdRLk&amp;media=2835&amp;campaign=1"></script>
-    <p><a href="https://ct.deriv.com/investor/eyXMtwBs?u=LuckyKhumalo%F0%9F%8E%89%F0%9F%AA%84%F0%9F%8E%8A%F0%9F%9A%80%F0%9F%93%88%F0%9F%93%8A%F0%9F%93%89%F0%9F%8C%8C&fbclid=IwAR0OQQHxOUVrkwbYjyKNJ8tSN6_sAMapV6hwfJDvzvWZRgPZf--DotY823c/"  target="_blank" class="w3-hover-text-red"><h6>"Copy my trades" </h3></a></p>
-             <p><a href="https://ctrader.com/u/LuckyKhumalo?lang=en&fbclid=IwAR13Bk_4_jZ6ci4-s7cUE-lEMpmStXfO3t0hGbXaNgAb3L80_fVpL2OC4g4#%F0%9F%91%BB/"  target="_blank" class="w3-hover-text-red"><h6>"Ctrader copy me " </h3></a></p>
-        <p><a href="https://0769883456lucky.wixsite.com/website/blog/"  target="_blank" class="w3-hover-text-red"><h6>"My Blogging site " </h3></a></p>             
-                
- <h2>More valueable information</h2>
- 
-        
-<p><a href="https://linktr.ee/lucky_khumalo_4dwc/"  target="_blank" class="w3-hover-text-blue"><h3>Read More!!!</h3></a></p>
-        <div> <img src=" https://pbs.twimg.com/media/EjTNyjvXkAA8yTW?format=jpg&name=small      "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-        
-      	 <div> <img src="https://d1m75rqqgidzqn.cloudfront.net/wp-data/2020/12/07011650/shutterstock_1496224217.jpg
-              
-                 "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>		 
- 
-      
-        
-        <div> <img src="  https://d3hjf51r9j54j7.cloudfront.net/wp-content/uploads/sites/3/2019/08/financial-education.jpg "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-             
-   
- 	<div class="covid-note">
-		INSTANT FUNDING FOR FOREX TRADERS <a href="https://fundednext.com/?fpr=lucky50 /" target="_blank"><h1 style="color:red;">"Fundednext"   </h1> </a>
-	</div>       
-        
-            
-  
-<div> <img src="https://dynastywealthcreation.files.wordpress.com/2020/02/72566207_1709233215875551_4622855811025076224_n.jpg?w=540 "      alt="DynastyWealthCreation" width="400" height="300">
-        </div>
-   
-
-    
-  <hr style="width:380px" class="w3-opacity">
-
-  
-     <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-     
-     	<div class="covid-note">
-		INSTANT FUNDING FOR FOREX TRADERS <a href="https://the5ers.com/?ref=8460  /" target="_blank"><h1 style="color:orange;">"GETTING FUNDED BY THE-5%ERS"   </h1> </a>
-	</div>
-     
-   
-   <div> <img src="  https://d3hjf51r9j54j7.cloudfront.net/wp-content/uploads/sites/3/2019/08/financial-education.jpg "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-         <div> <img src=" https://pbs.twimg.com/media/EjTNyjvXkAA8yTW?format=jpg&name=small      "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-       
-       
- 	<div class="covid-note">
-		INSTANT FUNDING FOR FOREX TRADERS <a href="https://fundednext.com/?fpr=lucky50  /" target="_blank"><h1 style="color:purple;">"Fundednext"   </h1> </a>
-	</div>      
-      	<div class="covid-note">
-		INSTANT FUNDING FOR FOREX TRADERS <a href="https://accounts.binance.com/en/register?ref=IHBCG87Q  /" target="_blank"><h1 style="color:darkblue;">"Click Binance"   </h1> </a>
-	</div>
-  
-    
-    
- 
-  <div> <img src=" https://pbs.twimg.com/media/EjTNyjvXkAA8yTW?format=jpg&name=small      "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-  <div> <img src="
-                https://pbs.twimg.com/profile_images/1451850118072782848/tjcDlHeZ_400x400.jpg
-                 "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-  <p><a href="https://ct.deriv.com/investor/eyXMtwBs?u=LuckyKhumalo%F0%9F%8E%89%F0%9F%AA%84%F0%9F%8E%8A%F0%9F%9A%80%F0%9F%93%88%F0%9F%93%8A%F0%9F%93%89%F0%9F%8C%8C&fbclid=IwAR0OQQHxOUVrkwbYjyKNJ8tSN6_sAMapV6hwfJDvzvWZRgPZf--DotY823c/"  target="_blank" class="w3-hover-text-red"><h6>"Copy my trades" </h3></a></p>
-             <p><a href="https://ctrader.com/u/LuckyKhumalo?lang=en&fbclid=IwAR13Bk_4_jZ6ci4-s7cUE-lEMpmStXfO3t0hGbXaNgAb3L80_fVpL2OC4g4#%F0%9F%91%BB/"  target="_blank" class="w3-hover-text-red"><h6>"Ctrader copy me " </h3></a></p>
-        <p><a href="https://0769883456lucky.wixsite.com/website/blog/"  target="_blank" class="w3-hover-text-red"><h6>"My Blogging site " </h3></a></p>
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h1 style="color:red;">About Us</h1>
-  <hr style="width:200px" class="w3-opacity">
-    <p>Dynasty Wealth Creation ( Enterprise Number 2018/429678/07) 
-     is a Financial Markets Educational Trading, investing & training educational institution that helps, ushers & trains people on how to become professional indepedent traders. Our vision is to see all our students mastering the skillset, knowledge, experience and continuously evolving in becoming their best versions of themselves so that they can adapt in the ever changing markets on a daily basis. Our mission is to provide bona fide value & quality services at all cost and exceed students expectations...  <h1 style="color:blue;">"Welcome to the 1% Elite Club...!"</h1>!"
-    </p>
-    <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h1 style="color:green;">Founder</h1>
-    <hr style="width:200px" class="w3-opacity">
-  <p>  Lucky Khumalo is the founder of Dynasty Wealth Creation . The founder is also a high school teacher by profession!
-
-The company started in 2018 . The reason why the company was started was to impact and add value into aspiring upcoming Trader's life through the financial market...!
-
-The focus of the Enterprise is to create a community of like minded individuals who are self driven to learn, grow,adapt,evolve, re-invent their selves, master their craft and have a strong financial confidence in this ever changing economy. 
-<h1 style="color:blue;"> Meditate on the following three Quotes..;  </h1>
-
-<h1 style="color:red;"> 1.  </h1>
-
-“If we teach today’s students as we taught yesterday’s, we rob them of tomorrow.”
-
-― John Dewey 
-<h1 style="color:purple;"> 2.  </h1>
-
-In times of change learners inherit the earth; while the learned find themselves beautifully equipped to deal with a world that no longer exists.
-
--Eric Hoffer
-
-<h1 style="color:orange;"> 3.  </h1>
-“I never teach my pupils. I can only attempt to provide the conditions in which they can learn.”
-
-—ALBERT EINSTEIN
-
-    <!-- Testimonials -->
-    <h3 class="w3-padding-24 w3-text-light-grey"></h3>  
-    <img src="  https://dynastywealthcreation.files.wordpress.com/2019/04/44027736_1397274780404731_6549493975831543808_n-1.jpg
-       " alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">"Success is not final; failure is not fatal: It is the courage to continue that counts."
-
--- Winston S. Churchill      </span></p>
-    <p>  </p><br>
-    
-    <img src="https://dynastywealthcreation.files.wordpress.com/2019/04/40633628_1359215590877317_4110583765867167744_n.jpg     " alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right">"Don't be afraid to give up the good to go for the great."
-
---John D. Rockefeller.</span></p>
-    <p></p>
-  <img src="  https://dynastywealthcreation.files.wordpress.com/2019/04/40573124_1358441754288034_1382186618349158400_n.jpg
-       " alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:80px">
-    <p><span class="w3-large w3-margin-right"> "Try not to become a man of success. Rather become a man of value."-- Albert Einstein.</span> </p>
- <p></p><br>
- <!-- End About Section -->
-	<div class="covid-note">
-		INSTANT FUNDING FOR FOREX TRADERS <a href="https://the5ers.com/?ref=8460  /" target="_blank"><h1 style="color:violet;">"GETTING FUNDED BY THE-5%ERS"   </h1> </a>
-	</div>
- 
-  </div>
-          <div> <img src=" https://pbs.twimg.com/media/EjTNyjvXkAA8yTW?format=jpg&name=small      "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-       
-   <div> <img src="
-                https://pbs.twimg.com/profile_images/1451850118072782848/tjcDlHeZ_400x400.jpg
-                  "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-<div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-   <h1 style="color:yellow;">Our Duty</h1>
-    <hr style="width:200px" class="w3-opacity">
-
-  
-
-
-It’s our responsibility $ your ability to read the market, execute the correct strategy for that particular situation, and consistently apply proper risk management techniques that hopefully get you more profitable wins than losses in the long run.
-
-Like in art, sports, or any performance endeavor, forex trading is a multi-faceted skill. The tools alone won’t make you successful.
-
-A dedicated effort towards education and application of what you learn, as well as the constant review of your performance, is the only path to success.In the beginning, that process of learning and deliberate practice should be your main focus, NOT the profits.
-
-Continuing with the basketball analogy, if your goal was to reach the NBA, would you get to the level of performance you desired by playing games only?
-
-Or would you develop faster by focusing on physical conditioning, developing different skills (a jump shot, dribbling, footwork, passing, etc.) in practice, as well as playing games?Probably the latter right?If you went straight to the NBA without any training, do you think you’ll score many points or win games?Nope. I We didn’t think so. same goes for becoming a professional Forex trader one must undergo the process,training & proper mentoring to win the game (markets arena).
-
-
-Our quality services & bona fide value as an educational institute is to help,train, mentor & provide proper guidances to our students from baby steps- basics, intermediate to advance until the student evolve into an independent professional trader, they can re-invent themselves,form  resilience,Build Your Character & adapt to any financial market condition!...<h1 style="color:blue;">"Welcome to the 1% Elite Club...!"</h1> </p>
- <p><a href="https://ct.deriv.com/investor/eyXMtwBs?u=LuckyKhumalo%F0%9F%8E%89%F0%9F%AA%84%F0%9F%8E%8A%F0%9F%9A%80%F0%9F%93%88%F0%9F%93%8A%F0%9F%93%89%F0%9F%8C%8C&fbclid=IwAR0OQQHxOUVrkwbYjyKNJ8tSN6_sAMapV6hwfJDvzvWZRgPZf--DotY823c/"  target="_blank" class="w3-hover-text-red"><h6>"Copy my trades" </h3></a></p>
-             <p><a href="https://ctrader.com/u/LuckyKhumalo?lang=en&fbclid=IwAR13Bk_4_jZ6ci4-s7cUE-lEMpmStXfO3t0hGbXaNgAb3L80_fVpL2OC4g4#%F0%9F%91%BB/"  target="_blank" class="w3-hover-text-red"><h6>"Ctrader copy me " </h3></a></p>
-        <p><a href="https://0769883456lucky.wixsite.com/website/blog/"  target="_blank" class="w3-hover-text-red"><h6>"My Blogging site " </h3></a></p>
-<div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-   <h2 style="color:Purple;">Full Private Course Program & Signal subscription full package</h2>
-    <hr style="width:300px" class="w3-opacity">
-   <h3 style="color:orange;">Signal Subscription full package!!!    </h3>
-<p>
-<ul>
- <h6 style="color:white;">R2500- 1month !!!    </h6>
- <h6 style="color:white;">R3000- 3months !!!    </h6>
- <h6 style="color:white;">R6000- 6months !!!    </h6>
- <h6 style="color:white;">R12 000- 1year !!!    </h6>
- <p><a href="https://ct.deriv.com/investor/eyXMtwBs?u=LuckyKhumalo%F0%9F%8E%89%F0%9F%AA%84%F0%9F%8E%8A%F0%9F%9A%80%F0%9F%93%88%F0%9F%93%8A%F0%9F%93%89%F0%9F%8C%8C&fbclid=IwAR0OQQHxOUVrkwbYjyKNJ8tSN6_sAMapV6hwfJDvzvWZRgPZf--DotY823c/"  target="_blank" class="w3-hover-text-red"><h6>"Copy my trades" </h3></a></p>
-             <p><a href="https://ctrader.com/u/LuckyKhumalo?lang=en&fbclid=IwAR13Bk_4_jZ6ci4-s7cUE-lEMpmStXfO3t0hGbXaNgAb3L80_fVpL2OC4g4#%F0%9F%91%BB/"  target="_blank" class="w3-hover-text-red"><h6>"Ctrader copy me " </h3></a></p>
-        <p><a href="https://0769883456lucky.wixsite.com/website/blog/"  target="_blank" class="w3-hover-text-red"><h6>"My Blogging site " </h3></a></p>
-<div><h3>Whatsapp 
-  Lucky Khumalo(0769883456)</h3></div>
-
-   <h2 style="color:blue;">Full Private course Package Once Off payment (R6000) FOR FULL TRAINING.</h2>
-</dv>  <hr style="width:450px" class="w3-opacity">
-
-<p><ul><li>1on1 in person lessons.</li><LI>Group lessons in person.<li>Free signals, with market analysis.</li><li> setups and entry points.
-Theory concepts</li>  <li>practical hand on task is important!!!</li>
-<li>whatsapp group</li>
-<li>telegram private channel</li>
-<li>mentorship & consultation</li>
-<li>proper guidance!</li>
-<li>Power Point Presentation for clarity</li>
-<li>Tutorials easy to understand trading practical examples.
-<li>Proper risk management guidance!</li>
-<li>Free PDF</LI>
-
-<li>Free Financial Education Short course!!!</LI>
-	<div class="covid-note">
-		INSTANT FUNDING FOR FOREX TRADERS <a href="https://the5ers.com/?ref=8460  /" target="_blank"><h1 style="color:pink;">"GETTING FUNDED BY THE-5%ERS"   </h1> </a>
-	</div>
-  	
-
-
-<div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-   <h3 style="color:yellow;">"Rememebr the goal & main objective is to make students Assets not Liabilities".</h3>       
-     <hr style="width:200px" class="w3-opacity">
-
-<h1 style="color:blue;">Real Street A Student life long learners apply what they learn.(they are all  Consistent & persistent)...!!!  </h1>
-<a href="https://www.learntotradethemarket.com/forex-articles/"  target="_blank" class="w3-hover-text-blue"><h3>-Read More Evolve & Adapt!!!</h3></a>
-<h1 style="color:purple;">Real Street B-Students never-give up they are all resilience...!!!  </h1>
-<a href="https://www.babypips.com/trading/psychology/"  target="_blank" class="w3-hover-text-blue"><h3>-Read More Evolve or Die!!!</h3></a>
- <p><a href="https://ct.deriv.com/investor/eyXMtwBs?u=LuckyKhumalo%F0%9F%8E%89%F0%9F%AA%84%F0%9F%8E%8A%F0%9F%9A%80%F0%9F%93%88%F0%9F%93%8A%F0%9F%93%89%F0%9F%8C%8C&fbclid=IwAR0OQQHxOUVrkwbYjyKNJ8tSN6_sAMapV6hwfJDvzvWZRgPZf--DotY823c/"  target="_blank" class="w3-hover-text-red"><h6>"Copy my trades" </h3></a></p>
-             <p><a href="https://ctrader.com/u/LuckyKhumalo?lang=en&fbclid=IwAR13Bk_4_jZ6ci4-s7cUE-lEMpmStXfO3t0hGbXaNgAb3L80_fVpL2OC4g4#%F0%9F%91%BB/"  target="_blank" class="w3-hover-text-red"><h6>"Ctrader copy me " </h3></a></p>
-        <p><a href="https://0769883456lucky.wixsite.com/website/blog/"  target="_blank" class="w3-hover-text-red"><h6>"My Blogging site " </h3></a></p>
-
-<h1 style="color:yellow;">Real Street C-Students  who grow up to be the innovators and creators of new-ideas, businesses, applications and products.  !!!  </h1>
-<a href="https://blog.forexsignals.com/"  target="_blank" class="w3-hover-text-blue"><h3>-Read More Evolve or Extinct!!!</h3></a>   
-
-<a href="https://ftmo.com/en/core-principles-of-an-effective-trading-day/?fbclid=IwAR1wL9WXKCb5-mBb4DOO1lCui9nHJHlQR0CW5NScTPnKTrtSxh2r0CDQhbg  "  target="_blank" class="w3-hover-text-blue"><h3>-Read Read Read !!!</h3></a> 
-
-<a href="https://2ndskiesforex.com/trading-strategies/successful-forex-trading-why-you-dont-have-what-it-takes/  "  target="_blank" class="w3-hover-text-blue"><h3>-Apply what u Learnt-evolve Adapt $ feed!!!</h3></a>
-
-
-
-<a href="https://the5ers.com/category/5ersblog/trading-psychology/  "  target="_blank" class="w3-hover-text-blue"><h3>-Join Da 1% Elite Club!!!</h3></a>
-
-
-
-
-        <div> <img src=" https://pbs.twimg.com/media/EjTNyjvXkAA8yTW?format=jpg&name=small      "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-    
-
- <div> <img src=" 
-                https://pbs.twimg.com/profile_images/1451850118072782848/tjcDlHeZ_400x400.jpg
-                 "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-
- <!-- Portfolio Section -->
-  <div class="w3-padding-64 w3-content" id="photos">
-  
-    <h2 class="w3-text-light-red"><h1 style="color:red;"> TakeCalculatedBold Risks & avoidGambling...!!! </h1>          </h2>
-    <hr style="width:380px" class="w3-opacity">
-
-  
-     <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half">
-      
-   <div> <img src="https://dynastywealthcreation.files.wordpress.com/2020/02/72566207_1709233215875551_4622855811025076224_n.jpg?w=540 "      alt="DynastyWealthCreation" width="400" height="300">
-        </div>
-    	<div class="covid-note">
-		INSTANT FUNDING FOR FOREX TRADERS <a href="https://the5ers.com/?ref=8460  /" target="_blank"><h1 style="color:red;">"GETTING FUNDED BY THE-5%ERS"   </h1> </a>
-	</div>
-  <p><a href="https://ct.deriv.com/investor/eyXMtwBs?u=LuckyKhumalo%F0%9F%8E%89%F0%9F%AA%84%F0%9F%8E%8A%F0%9F%9A%80%F0%9F%93%88%F0%9F%93%8A%F0%9F%93%89%F0%9F%8C%8C&fbclid=IwAR0OQQHxOUVrkwbYjyKNJ8tSN6_sAMapV6hwfJDvzvWZRgPZf--DotY823c/"  target="_blank" class="w3-hover-text-red"><h6>"Copy my trades" </h3></a></p>
-             <p><a href="https://ctrader.com/u/LuckyKhumalo?lang=en&fbclid=IwAR13Bk_4_jZ6ci4-s7cUE-lEMpmStXfO3t0hGbXaNgAb3L80_fVpL2OC4g4#%F0%9F%91%BB/"  target="_blank" class="w3-hover-text-red"><h6>"Ctrader copy me " </h3></a></p>
-        <p><a href="https://0769883456lucky.wixsite.com/website/blog/"  target="_blank" class="w3-hover-text-red"><h6>"My Blogging site " </h3></a></p>   	 
-  <div> <img src=" 
-                https://pbs.twimg.com/profile_images/1451850118072782848/tjcDlHeZ_400x400.jpg
-                 "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-    
-    <h2>More valueableinformation</h2>
-<p><a href="https://linktr.ee/lucky_khumalo_4dwc/"  target="_blank" class="w3-hover-text-blue"><h3>ReadMore!!!</h3></a></p>
-
- <h2>"Stayinvested,openminded& convertdarkEnergyintoLight  Energy(Positivity)High
- FrequencyVibrationalVibezzz."-(Lucky Khumalo)
-#neverstoplearning   </h2>
-<h1 style="color:blue;">"Welcometothe 1%EliteClub...!"</h1>
-
-        <div> <img src=" https://pbs.twimg.com/media/EjTNyjvXkAA8yTW?format=jpg&name=small      "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-       
- <div> <img src="
-                https://pbs.twimg.com/profile_images/1451850118072782848/tjcDlHeZ_400x400.jpg
-                 "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Contact Me</h2>
-    
-    <h2>Emailaddress :0769883456lucky@gmail.com or 0769883456lucky1@gmail.com
-    mywhatsappnumber 0769883456  or 0659516301.</h2>
-    
-    
-    
-    <hr style="width:200px" class="w3-opacity">    
-      <div class="w3-section">
-      
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> PMB & Durban, South Africa</p>
-      
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d55480.92088448229!2d30.318278760188125!3d-29.64559110473252!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef6bd8a4cb3bce5%3A0x3b70af68ac766e7a!2sDream%20Chasers%20Forex!5e0!3m2!1sen!2sza!4v1644140030548!5m2!1sen!2sza" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-      
-      
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +27 769883456</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: 0769883456lucky@gmail.com</p>
-    </div><br>
-    
-    
-    <p>Lets get in touch. Send me a message:</p>
-<form method="post" action=""https://lucky0769883456.github.io/DynastyWealthCreation-/  " accept-charset="ISO-8859-1" onsubmit="var   originalCharset = document.charset; document.charset = 'ISO-8859-1';
-window.onbeforeunload = function (){document.charset=originalCharset;};">:
-Your Name    <input name="realname" />
-Your Email   <input name="email"    />
-Your Message
-<textarea cols="40" rows="10" name="Message">
-</textarea>
-<input type="submit" value="Send" />
-<input type="hidden" name="recipient" value="0769883456lucky@gmail.com" />
-<input type="hidden" name="subject" value="Subject" />
-<input type="hidden" name="redirect"  value="https://lucky0769883456.github.io/DynastyWealthCreation-/ " />
-<input type="hidden" name="missing_fields_redirect"  value="https://lucky0769883456.github.io/DynastyWealthCreation-/ " />
-<input type="hidden" name="required" value="realname,email,Message" />
-</form>
-    
-      
-      </button>
-      </p>
-    </form>
-  <!-- End Contact Section -->
-  </div>
-          <div> <img src=" https://pbs.twimg.com/media/EjTNyjvXkAA8yTW?format=jpg&name=small      "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-       
- 	<div class="covid-note">
-		INSTANT FUNDING FOR FOREX TRADERS <a href="https://the5ers.com/?ref=8460  /" target="_blank"><h1 style="color:yellow;">"GETTING FUNDED BY THE-5%ERS"   </h1> </a>
-	</div> 
-    <div class="covid-note">
-		
-  
-   
- 
-    
-    <div class="covid-note">
-		
-    
-    
-    
-      <!-- Footer -->
-  <footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-  
-  <p class="footerSocial"><span><a href="https://www.facebook.com/0769883456lucky/?modal=admin_todo_tour" target="_blank" class="social facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a>&nbsp;
-  <a href="https://www.instagram.com/lucky_khumalo_4dwc/?hl=en /" target="_blank" class="social instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></span></p>
-  <a href="https://twitter.com/Lucky0769883456" target="_blank"class="social facebook"><i class="fa fa-twitter" aria-hidden="true"></i></a> 
-  
-  <a href="https://www.youtube.com/channel/UCexSRkcuKoB4tCp7CeB8NbA?view_as=subscriber"target="_blank" class="youtube"><i class="fa fa-youtube" aria-hidden="true"></i></a>&nbsp; 
- 
-  <script>
-if (window.convertflow == undefined) {
-var script = document.createElement('script'); 
-script.async = true;
-script.src = "https://js.convertflow.co/production/websites/27820.js"; 
-document.body.appendChild(script); 
-};
-</script>
-<div class="cf-cta-snippet cta91597" data-website-id="27820" data-cta-id="91597"></div>  
- 
- 
- 	
- 
- 
-       
-  <h1 style="color:blue;">"Welcometothe 1%EliteClub...!"</h1>
-<p class="w3-medium">Powered by <a href="https://www.evernote.com/referral/Registration.action?sig=628a556a6fd8648e27765e0daa0f49944dbde354988d7ead6957eca9c4f0da76&uid=205882803       " target="_blank" class="w3-hover-text-blue">Lucky Khumalo</a></p>  
-        <div> <img src=" https://pbs.twimg.com/media/EjTNyjvXkAA8yTW?format=jpg&name=small      "  w=540 "      alt="DynastyWealthCreation" width="300" height="300">
-        </div>
-    
-      
-      
-      
-  
-  <!-- End footer -->
-  </footer>
-
-<!-- END PAGE CONTENT -->
-</div>
-
+</html>
 
