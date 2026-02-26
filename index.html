@@ -526,7 +526,7 @@
                         <i class="fas fa-exchange-alt mr-2 text-yellow-400 text-xs md:text-sm"></i>
                         Open Binance Account
                     </a>
-                    <!-- VALR referral link added here -->
+                    <!-- VALR referral link -->
                     <a href="https://www.valr.com/invite/VASHQNX3" target="_blank" class="bg-gray-800 hover:bg-gray-700 px-4 py-2 md:px-6 md:py-3 rounded-lg font-medium transition-colors flex items-center text-sm md:text-base">
                         <i class="fas fa-coins mr-2 text-yellow-400 text-xs md:text-sm"></i>
                         Join VALR (Referral: VASHQNX3)
@@ -692,8 +692,11 @@
         <div class="container mx-auto px-4 sm:px-6 text-center">
             <h3 class="text-xl md:text-2xl font-bold mb-4 text-yellow-400">Join Our Trading Community</h3>
             <p class="text-gray-400 max-w-2xl mx-auto mb-4 md:mb-6 text-sm md:text-base">Subscribe to our newsletter for market insights, trading tips, and exclusive offers.</p>
-            <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
-                <input type="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-yellow-400 focus:outline-none text-sm md:text-base" required>
+            <!-- Newsletter Form - replace YOUR_NEWSLETTER_FORM_ID with your actual Formspree form ID -->
+            <form action="https://formspree.io/f/YOUR_NEWSLETTER_FORM_ID" method="POST" class="max-w-md mx-auto flex flex-col sm:flex-row gap-2">
+                <input type="email" name="email" placeholder="Your email address" class="flex-grow px-4 py-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:border-yellow-400 focus:outline-none text-sm md:text-base" required>
+                <input type="hidden" name="_subject" value="New Newsletter Subscriber">
+                <input type="hidden" name="_next" value="https://lucky0769883456.github.io/DynastyWealthCreation-/#">
                 <button type="submit" class="btn-primary px-4 py-3 md:px-6 md:py-3 rounded-lg font-semibold whitespace-nowrap text-sm md:text-base">Subscribe</button>
             </form>
             <p class="text-gray-500 text-xs mt-3">We respect your privacy. Unsubscribe at any time.</p>
@@ -777,9 +780,9 @@
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
+                <!-- Contact Form (Corrected Formspree Endpoint) -->
                 <div class="md:w-3/5">
-                    <form action="https://formspree.io/f/your_form_id_here" method="POST" class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-lg">
+                    <form action="https://formspree.io/f/xbdawpoj" method="POST" class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-lg">
                         <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
                             <div>
                                 <label for="name" class="block text-sm font-medium mb-2 text-xs md:text-sm">Full Name</label>
@@ -1011,30 +1014,16 @@
             lazyLoadImages();
         });
 
-        // Form validation
-        const contactForm = document.querySelector('form');
+        // Form validation (only for contact form, not newsletter)
+        const contactForm = document.querySelector('#contact form');
         if (contactForm) {
             contactForm.addEventListener('submit', (e) => {
-                // Simple validation - you can expand this
                 const email = document.getElementById('email');
                 if (!email.value.includes('@')) {
                     e.preventDefault();
                     email.focus();
                     alert('Please enter a valid email address');
                 }
-            });
-        }
-
-        // Newsletter form handling
-        const newsletterForm = document.querySelector('form');
-        if (newsletterForm && newsletterForm.parentElement.previousElementSibling.textContent.includes('newsletter')) {
-            newsletterForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const email = newsletterForm.querySelector('input[type="email"]');
-                
-                // Here you would typically send the data to your server
-                alert(`Thank you for subscribing with ${email.value}! You'll receive our trading insights soon.`);
-                email.value = '';
             });
         }
     </script>
