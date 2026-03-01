@@ -243,6 +243,12 @@
             border: 2px solid #f59e0b;
             box-shadow: 0 0 20px rgba(245,158,11,0.3);
         }
+
+        /* Blog popup animation */
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
     </style>
 </head>
 <body class="text-gray-200">
@@ -880,7 +886,105 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript -->
+    <!-- Blog Pop-up Notifications -->
+    <script>
+        // 🔥 EDIT THIS ARRAY WITH YOUR OWN BLOG POSTS
+        const blogPosts = [
+            { title: "How to Build Wealth Through Trading in 2026", link: "YOUR_BLOG_LINK_1" },
+            { title: "Top 5 Forex Strategies for Beginners", link: "YOUR_BLOG_LINK_2" },
+            { title: "Understanding Market Trends: A Guide", link: "YOUR_BLOG_LINK_3" }
+        ];
+
+        let currentPopUp = null;
+        let popUpInterval = null;
+
+        function showBlogPopUp(post) {
+            if (currentPopUp) {
+                currentPopUp.remove();
+            }
+
+            const popup = document.createElement('div');
+            popup.id = 'blog-popup';
+            popup.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #111827;
+                color: white;
+                padding: 16px;
+                border-radius: 12px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+                max-width: 300px;
+                z-index: 9999;
+                font-family: 'Montserrat', sans-serif;
+                border-left: 4px solid #f59e0b;
+                animation: slideIn 0.3s ease;
+            `;
+
+            const closeBtn = document.createElement('span');
+            closeBtn.innerHTML = '✖';
+            closeBtn.style.cssText = `
+                position: absolute;
+                top: 8px;
+                right: 12px;
+                cursor: pointer;
+                font-size: 18px;
+                color: #9ca3af;
+                transition: color 0.2s;
+            `;
+            closeBtn.onmouseover = () => closeBtn.style.color = '#f59e0b';
+            closeBtn.onmouseout = () => closeBtn.style.color = '#9ca3af';
+            closeBtn.onclick = () => {
+                popup.remove();
+                currentPopUp = null;
+            };
+
+            popup.innerHTML = `
+                <strong style="color:#f59e0b; display:block; margin-bottom:8px;">📰 Latest Article</strong>
+                <p style="margin:0 0 12px 0; font-size:15px; line-height:1.4;">${post.title}</p>
+                <a href="${post.link}" target="_blank" style="
+                    display:inline-block;
+                    background:#22c55e;
+                    color:white;
+                    text-decoration:none;
+                    padding:8px 16px;
+                    border-radius:6px;
+                    font-weight:600;
+                    font-size:14px;
+                    transition: background 0.2s;
+                " onmouseover="this.style.background='#16a34a'" onmouseout="this.style.background='#22c55e'">Read Now →</a>
+            `;
+
+            popup.appendChild(closeBtn);
+            document.body.appendChild(popup);
+            currentPopUp = popup;
+
+            setTimeout(() => {
+                if (currentPopUp === popup) {
+                    popup.remove();
+                    currentPopUp = null;
+                }
+            }, 8000);
+        }
+
+        // Start rotation
+        let postIndex = 0;
+        function startBlogRotation() {
+            if (blogPosts.length === 0) return;
+            setTimeout(() => {
+                showBlogPopUp(blogPosts[postIndex]);
+                postIndex = (postIndex + 1) % blogPosts.length;
+                popUpInterval = setInterval(() => {
+                    showBlogPopUp(blogPosts[postIndex]);
+                    postIndex = (postIndex + 1) % blogPosts.length;
+                }, 15000);
+            }, 5000);
+        }
+
+        window.addEventListener('load', startBlogRotation);
+    </script>
+
+    <!-- JavaScript (existing) -->
     <script>
         // Mobile Menu Toggle
         document.getElementById('menu-toggle').addEventListener('click', () => {
